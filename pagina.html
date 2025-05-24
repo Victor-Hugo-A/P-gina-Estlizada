@@ -138,9 +138,9 @@
 
     <section id="content" class="main-img main-bg section">
         <div class="main-content grid-one-content">
-            <h2 class="grid-main-heading" style="margin-left: 14rem; text-align: center;">Simplifique seu fluxo de trabalho de redação de conteúdo</h2>
-            <p class="grid-description" style="text-decoration: none; margin-left: 35rem;">"Transforme seu fluxo de trabalho com ferramentas inteligentes."</p>
-        <div class="grid">
+            <h2 class="grid-main-heading">Simplifique seu fluxo de trabalho de redação de conteúdo</h2>
+            <p class="grid-description">"Transforme seu fluxo de trabalho com ferramentas inteligentes."</p>
+            <div class="grid">
             <article>
                     <h3><i class="fa-solid fa-desktop"></i></h3>
             <p>Seja usando seu computador, celular ou tablet, em casa, no trabalho ou em qualquer lugar, você pode fazer brainstorms e gerar conteúdo com o Texto Mágico em um design do Canva sempre que precisar. Quer uma dose extra de inspiração? Com o Canva Pro, você pode usar o Texto Mágico mais vezes. Reescreva textos online sem passar por apuros.</p>
@@ -176,7 +176,7 @@
                     <th>O</th>
                     <th>Canva</th>
                 </tr>
-            </thead>                <tr>
+            </thead>                
             </thead>
                 <tbody>
                     <tr>
@@ -290,22 +290,20 @@
 
     <script>
  // Rolagem suave para todos os links internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if(targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.length > 1 && document.querySelector(href)) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                const top = target.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({
+                    top: top,
+                    behavior: 'smooth'
                 });
             }
         });
-    });
+    });    
 
     // Botão que alterna entre topo e rodapé
     const backToTopBtn = document.querySelector('.back-to-top');
