@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -22,7 +21,7 @@
     <aside class="menu white-bg">
         <div class="main-content menu-content">
             <div>
-                <h1 onclick="getElementById('close-menu').checked = false;">
+                <h1>
                     <img class="img" src="./Img/undraw_sweet-home_ezw3.png" alt="Home" style="height: 5rem; float: left;">
                     <a class="logo" href="#home">HOME</a> 
                 </h1>
@@ -74,7 +73,7 @@
     <section id="top3" class="main-img  main-bg section">
         <div class="main-content grid-one-content">
             <h2 class="grid-main-heading">TOP 3</h2>
-            <p class="grid-description">"Uma nova maneira de criar documentos"</p>
+            <p class="grid-description prg" style="margin-right: 17rem;">"Uma nova maneira de criar documentos"</p>
         <div class="grid">
             <article>
                     <h3><i class="far fa-circle"></i></h3>
@@ -139,7 +138,7 @@
     <section id="content" class="main-img main-bg section">
         <div class="main-content grid-one-content">
             <h2 class="grid-main-heading">Simplifique seu fluxo de trabalho de redação de conteúdo</h2>
-            <p class="grid-description">"Transforme seu fluxo de trabalho com ferramentas inteligentes."</p>
+            <p class="grid-description prg">"Transforme seu fluxo de trabalho com ferramentas inteligentes."</p>
             <div class="grid">
             <article>
                     <h3><i class="fa-solid fa-desktop"></i></h3>
@@ -241,7 +240,7 @@
 </div>
             
                     <div class="intro-img">
-               <img clas="img" src="./Img/undraw_contact-us_kcoa.png" alt="contact undraw" style="max-width: 70rem;">
+               <img class="imge" src="./Img/undraw_contact-us_kcoa.png" alt="contact undraw">
             </div>
         </div>
 
@@ -251,7 +250,7 @@
 
                 <div class="form-group">
                     <label for="first-name">First name</label>
-                    <input type="text" name="fist-name" id="fist-name" placeholder= "Type your name.">
+                    <input type="text" name="first-name" id="first-name" placeholder= "Type your name.">
                 </div>
                 <div class="form-group">
                     <label for="last-name">Last Name</label>
@@ -274,7 +273,7 @@
 
 <footer id="footer" class="footer">
     <div class="footer-content">
-        <p>Feito por Victor Hugo A. com <i class="fas fa-heart" style="color: #ff6b6b;"></i></p>
+        <p>Feito por Victor Hugo A. <i class="fab fa-css3-alt" style="color: #f30303;"></i>
         <div class="footer-links">
             <a href="#" class="footer-link"><i class="fa-solid fa-file"></i> Portfólio</a>
             <a href="mailto:victorpht.vh@gmail.com" class="footer-link"><i class="fas fa-envelope"></i> Contato</a>
@@ -289,7 +288,14 @@
     </a>
 
     <script>
- // Rolagem suave para todos os links internos
+        document.querySelectorAll('.menu a').forEach(link => {
+        link.addEventListener('click', () => {
+        document.getElementById('close-menu').checked = false;
+        });
+    });
+
+
+    // Rolagem suave para todos os links internos
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
